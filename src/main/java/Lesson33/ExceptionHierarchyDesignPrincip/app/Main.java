@@ -9,18 +9,21 @@ public class Main {
         Rideable[] bikes = {
                 new Bike(),
                 new ElectricBike(),
-                new MountainBike()
+                new MountainBike(),
+                new ChristianiaBike()
         };
 
         for (Rideable bike : bikes) {
             try {
-                bike.ride(15, true);
+                bike.ride(20, true);
             } catch (BatteryLowException e) {
                 System.out.println("Charge the battery!");
             } catch (FlatTireException e) {
                 System.out.println("Fix the tire!");
             } catch (BrakeFailureException e) {
                 System.out.println("Fix the brakes!");
+            } catch (OverloadException e) {
+                System.out.println("Fix the weight!");
             } catch (BikeException e) {
                 System.out.println("General bike issue!");
             }
